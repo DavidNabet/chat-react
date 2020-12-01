@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="19px" height="15px" viewbox="0 0 19 15" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <path d="M17.5 2L0.5 2C0.223858 2 0 1.77614 0 1.5L0 0.5C0 0.223858 0.223858 0 0.5 0L17.5 0C17.7761 0 18 0.223858 18 0.5L18 1.5C18 1.77614 17.7761 2 17.5 2ZM15 7.5L15 6.5C15 6.22386 14.7761 6 14.5 6L3.5 6C3.22386 6 3 6.22386 3 6.5L3 7.5C3 7.77614 3.22386 8 3.5 8L14.5 8C14.7761 8 15 7.77614 15 7.5ZM12 13.5L12 12.5C12 12.2239 11.7761 12 11.5 12L6.5 12C6.22386 12 6 12.2239 6 12.5L6 13.5C6 13.7761 6.22386 14 6.5 14L11.5 14C11.7761 14 12 13.7761 12 13.5Z" transform="translate(0.5 0.5)" id="filter-icon" fill="#FFFFFF" fill-opacity="0.40176246" fill-rule="evenodd" stroke="none" />
+</svg>

@@ -1,0 +1,16 @@
+@import "./mixins";
+$fontRegular: 'Graphik Regular';
+$fontSemiBold: 'Graphik-SemiBold';
+$fontMedium: 'Graphik-Medium';
+$fontLight: 'Graphik-Light';
+h3 {
+    @include h3();
+}
+
+h2 {
+    @include h2();
+}
+
+h5 {
+    @include h5();
+}

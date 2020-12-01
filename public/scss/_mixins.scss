@@ -1,0 +1,75 @@
+@import "../../node_modules/@fantassin/utils/rem-calc";
+@mixin hn() {
+    font-weight: 200;
+    font-style: normal;
+    color: var(--color-black);
+}
+
+@mixin mediaMaxWidth($w) {
+    @media (max-width: $w) {
+        @content;
+    }
+}
+
+@mixin mediaMinWidth($w) {
+    @media (min-width: $w) {
+        @content;
+    }
+}
+
+$spacer: 10px !default;
+@function space($i: 1) {
+    @if $i < 1 {
+        @return $spacer / $i;
+    }
+    @return $spacer * $i;
+}
+
+@mixin h2() {
+    @include hn();
+    font-size: rem-calc(32px);
+    line-height: rem-calc(26px);
+}
+
+@mixin h3() {
+    @include hn();
+    font-size: rem-calc(24px);
+    line-height: rem-calc(22px);
+}
+
+@mixin h5() {
+    font-size: rem-calc(14px);
+    line-height: rem-calc(20px);
+    font-weight: 600;
+    color: #fff;
+    font-family: $fontSemiBold;
+}
+
+@mixin center() {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+@mixin avatar($color) {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $color;
+    margin-right: space(3);
+}
+
+@mixin badge() {
+    display: inline-block;
+    text-align: left;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    font-size: rem-calc(12px);
+    font-weight: 400;
+    line-height: rem-calc(16px);
+    letter-spacing: 0.2px;
+    border-radius: 3px;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}

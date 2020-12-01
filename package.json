@@ -1,0 +1,33 @@
+{
+  "name": "chat-react",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "hogan-middleware": "^0.2.2",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "mustache": "^4.0.1",
+    "node-sass": "^5.0.0",
+    "react": "^17.0.1",
+    "socket.io": "^3.0.3"
+  },
+  "devDependencies": {
+    "@fantassin/utils": "^1.4.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-image": "^6.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace-name": "^1.0.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-terser": "^2.0.0",
+    "gulp-util": "^3.0.8"
+  }
+}

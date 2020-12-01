@@ -1,0 +1,127 @@
+@import "../../node_modules/@fantassin/utils/rem-calc";
+@import "./mixins";
+.left_wrapper {
+    position: relative;
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    margin-left: space(4);
+    margin-right: space(4);
+    margin-top: space(4);
+    form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .search {
+            position: relative;
+            margin-right: 15px;
+            i {
+                position: absolute;
+                top: 32%;
+                left: 8%;
+                transform: translate(-32%, -8%);
+                margin: 0 auto;
+                font-size: large;
+                color: var(--color-border);
+            }
+            input {
+                border-radius: 22px;
+                outline: none;
+                color: var(--color-border);
+                background-color: var(--bg-color-sidebar);
+                height: 44px;
+                line-height: 44px;
+                border: none;
+                width: 332px;
+                padding: 1rem 0 1rem 3rem;
+            }
+        }
+        #filter {
+            position: relative;
+            border-radius: 50%;
+            background-color: var(--bg-color-sidebar);
+            width: 44px;
+            height: 44px;
+            line-height: 44px;
+            >img {
+                @include center();
+            }
+        }
+    }
+    .messages {
+        margin-top: space(4);
+        .message {
+            display: flex;
+            flex-direction: row;
+            padding: 20px 16px 20px 0;
+            background-color: var(--bg-color-sidebar);
+            margin-top: rem-calc(12px);
+            border-radius: rem-calc(8px);
+            .avatar {
+                @include avatar(var(--bg-avatar));
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+            .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                flex: 1;
+                &_actions {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .more {
+                        color: white;
+                        opacity: 0.4;
+                    }
+                }
+                h5 {
+                    margin-bottom: rem-calc(4px);
+                }
+                p {
+                    color: white;
+                    line-height: rem-calc(20px);
+                    font-weight: 400;
+                    margin-bottom: rem-calc(8px);
+                }
+                span {
+                    color: white;
+                    font-size: rem-calc(12px);
+                    line-height: rem-calc(16px);
+                }
+            }
+            &:nth-child(1) {
+                .avatar {
+                    background-color: var(--bg-avatar-first);
+                }
+            }
+            &:nth-child(2) {
+                .avatar {
+                    background-color: var(--bg-avatar-second);
+                }
+            }
+            &:nth-child(3) {
+                .avatar {
+                    background-color: var(--bg-avatar-third);
+                }
+            }
+            &.selected {
+                background-color: var(--bg-button-primary);
+                transition: 500ms ease transform;
+                box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.09), -5px -5px 30px 7px rgba(0, 0, 0, 0.12);
+                transform: translate(50%, 25%);
+            }
+        }
+    }
+}
+
+@keyframes toRight {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(50%, 25%);
+    }
+}
