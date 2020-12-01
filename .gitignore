@@ -1,5 +1,5 @@
 # Stylesheets
-public/scss/*
+public/scss*
 
 # Logs
 logs
