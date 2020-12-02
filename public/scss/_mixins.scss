@@ -25,6 +25,12 @@ $spacer: 10px !default;
     @return $spacer * $i;
 }
 
+@mixin font() {
+    font-family: $fontRegular;
+    line-height: 26px;
+    letter-spacing: 0.2px;
+}
+
 @mixin h2() {
     @include hn();
     font-size: rem-calc(32px);
