@@ -1,0 +1,6 @@
+// Cette variable affecte les class 'h-*' et 'w-*'
+$sizes: () !default;
+$sizes: map-merge(( 25: 25%, 50: 50%, 75: 75%, 100: 100%), $sizes);
+// Icone sidebar
+$tabs: () !default;
+$tabs: map-merge(( "dashboard": "dashboard", "notification": "notification", "mail": "mail", "team": "team", "chart":"chart", "settings": "settings"), $tabs);

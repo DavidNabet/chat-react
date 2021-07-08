@@ -1,16 +1,24 @@
 @import "../../node_modules/@fantassin/utils/rem-calc";
-// @import "~@fantassin/utils/spacer";
+@import "../../node_modules/@fantassin/utils/media-queries";
 @import "./mixins";
+@import "./variables";
 .sidebar {
     background-color: var(--bg-color-sidebar);
     display: flex;
     max-width: 80px;
-    flex: 1;
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    border-right: 1px solid #202020;
-    z-index: 99;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    height: 100vh;
+    @include breakpoint($container) {
+        padding-bottom: rem-calc(24px);
+    }
     .flex-icon {
         display: flex;
         flex-direction: column;
@@ -22,10 +30,10 @@
         position: relative;
         padding: space(2);
         margin-top: space(2);
-        $tabs: 1, 2, 3, 4, 5, 6;
-        @each $tab in $tabs {
-            .block-image--#{$tab} {
-                background: url("/img/side-img-#{$tab}.svg") center no-repeat var(--bg-color-sidebar);
+        @each $tab,
+        $obj in $tabs {
+            .#{$tab} {
+                background: url("/img/#{$obj}-icon.svg") center no-repeat var(--bg-color-sidebar);
                 font-size: 25px;
                 padding: 6.5px 20px;
                 width: 40px;

@@ -1,8 +1,9 @@
 @import "../../node_modules/@fantassin/utils/rem-calc";
+@import "../../node_modules/@fantassin/utils/ease";
 @import "./mixins";
 .box-compose {
     width: rem-calc(620px);
-    height: rem-calc(180px);
+    height: auto;
     border-radius: 8px;
     background-color: #fff;
     padding: rem-calc(24px);
@@ -35,7 +36,11 @@
             justify-content: space-between;
             margin-top: space(1);
             &_icon {
+                cursor: pointer;
                 margin-right: space(2);
+                &:hover {
+                    background-color: var(--bg-button-primary);
+                }
             }
             button {
                 padding: 0.63rem 1.6rem;

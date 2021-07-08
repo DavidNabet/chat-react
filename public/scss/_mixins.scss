@@ -64,6 +64,7 @@ $spacer: 10px !default;
     border-radius: 50%;
     background-color: $color;
     margin-right: space(3);
+    transition: color 480ms linear;
 }
 
 @mixin badge() {
@@ -78,4 +79,9 @@ $spacer: 10px !default;
     letter-spacing: 0.2px;
     border-radius: 3px;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+@mixin mask($url) {
+    mask: url($url) no-repeat center / contain;
+    -webkit-mask: url($url) no-repeat center;
 }

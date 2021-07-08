@@ -1,3 +1,4 @@
+@import "../../node_modules/@fantassin/utils/media-queries";
 @import "./sidebar";
 @import "./message-area";
 @import "./message-list";
@@ -5,6 +6,8 @@
 @import "./heading";
 @import "./compose";
 @import "./flex-styles";
+@import "./icons";
+@import "./variables";
 :root {
     --color-black: #1A1919;
     --color-border: #979797;
@@ -53,6 +56,14 @@ body {
     font-family: $fontRegular;
 }
 
+i {
+    font-style: normal;
+}
+
+i.icon {
+    display: inline-block;
+}
+
 input,
 code,
 textarea,
@@ -71,32 +82,47 @@ main {
     width: 100%;
     display: flex;
     flex-direction: row;
+    background-color: black;
+    @include breakpoint($xlarge) {
+        width: 100%;
+    }
 }
 
-.container {
-    overflow: hidden;
-    background-color: black;
-    flex: 12;
-    height: 100%;
-    &-wrapper {
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        .container-left {
-            flex: 4;
-            display: flex;
-            height: 100%;
-            flex-direction: column;
-        }
-        .container-right {
-            flex: 10;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background-color: #fff;
-            border-radius: 30px;
-            border: 10px solid #000;
-        }
-    }
+// .container {
+//     overflow: hidden;
+//     background-color: black;
+//     flex: 12;
+//     height: 100%;
+//     &-wrapper {
+//         height: 100%;
+//         display: flex;
+//         flex-direction: row;
+//         .container-left {
+//             flex: 4;
+//             display: flex;
+//             height: 100%;
+//             flex-direction: column;
+//         }
+//         .container-right {
+//             flex: 10;
+//             width: 100vw;
+//             height: 100vh;
+//             display: flex;
+//             flex-direction: column;
+//             background-color: #fff;
+//             border-radius: 30px;
+//             border: 10px solid #000;
+//         }
+//     }
+// }
+.message-list {
+    width: 30%;
+}
+
+.message-area {
+    width: 70%;
+    background-color: #fff;
+    border-radius: 30px;
+    border: 10px solid #000;
+    overflow-y: scroll;
 }

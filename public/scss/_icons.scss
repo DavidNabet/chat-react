@@ -1,0 +1,22 @@
+@import "./mixins";
+.icon {
+    width: 16px;
+    height: 18px;
+    background-color: #A7A8B8;
+}
+
+.picture {
+    @include mask("/img/image-icon.svg");
+}
+
+.emoji {
+    @include mask("/img/emoji-icon.svg");
+}
+
+.attachment {
+    @include mask("/img/attachment-icon.svg");
+}
+
+.filter {
+    @include mask("/img/filter-icon.svg");
+}
