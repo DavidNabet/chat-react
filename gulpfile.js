@@ -2,10 +2,8 @@ const gulp = require("gulp");
 const gulpSass = require("gulp-sass");
 const gulpClean = require("gulp-clean-css");
 const terser = require("gulp-terser");
-const autoprefixer = require("gulp-autoprefixer");
 const concat = require("gulp-concat");
 const image = require("gulp-image");
-const replaceName = require("gulp-replace-name");
 
 // compile sass file to CSS
 gulp.task("sass", function () {
@@ -77,15 +75,6 @@ gulp.task("image", function () {
     .pipe(gulp.dest("./public/dist/images/"));
 });
 
-// Replace elements in filename
-// space -> _
-gulp.task("replaceName", function () {
-  return gulp
-    .src("./public/dist/images/**/*")
-    .pipe(replaceName(/ /g, "_"))
-    .pipe(gulp.dest("./public/dist/images/"));
-});
-
 gulp.task("watch", function () {
   // Détecter tous les changements en tapant la commande "gulp watch" dans le terminal
   gulp.watch("./public/scss/*.scss", gulp.series("sass"));
@@ -94,7 +83,4 @@ gulp.task("watch", function () {
   gulp.watch("./public/fonts/*", gulp.series("fonts"));
 });
 
-gulp.task(
-  "default",
-  gulp.series("sass", "css", "js", "fonts", "image", "replaceName")
-);
+gulp.task("default", gulp.series("sass", "css", "js", "fonts", "image"));
