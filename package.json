@@ -15,7 +15,7 @@
         "http-errors": "~1.6.3",
         "morgan": "~1.9.1",
         "mustache": "^4.0.1",
-        "node-sass": "^7.0.0",
+        "node-sass": "^7.0.1",
         "react": "^17.0.1"
     },
     "devDependencies": {
