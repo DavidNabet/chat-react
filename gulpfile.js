@@ -3,7 +3,7 @@ const gulpSass = require("gulp-sass");
 const gulpClean = require("gulp-clean-css");
 const terser = require("gulp-terser");
 const concat = require("gulp-concat");
-const image = require("gulp-image");
+// const image = require("gulp-image");
 
 // compile sass file to CSS
 gulp.task("sass", function () {
@@ -69,10 +69,12 @@ gulp.task("fonts", function () {
 
 // Minify Images
 gulp.task("image", function () {
-  return gulp
-    .src("./public/images/**/*")
-    .pipe(image())
-    .pipe(gulp.dest("./public/dist/images/"));
+  return (
+    gulp
+      .src("./public/images/**/*")
+      // .pipe(image())
+      .pipe(gulp.dest("./public/dist/images/"))
+  );
 });
 
 gulp.task("watch", function () {
@@ -83,4 +85,4 @@ gulp.task("watch", function () {
   gulp.watch("./public/fonts/*", gulp.series("fonts"));
 });
 
-gulp.task("default", gulp.series("sass", "css", "js", "fonts", "image"));
+gulp.task("default", gulp.series("sass", "css", "js", "fonts"));
