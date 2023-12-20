@@ -1,0 +1,64 @@
+$xs: 0px !default;
+$mobile: 560px !default;
+$tablet: 780px !default;
+$desktop: 1024px !default;
+$laptop: 1160px !default;
+$max-width: 1280px !default;
+$base: 1360px !default;
+$afterRef: 1479px !default;
+$ref: 1480px !default;
+$tv: 1920px !default;
+
+$small: $mobile;
+$medium: $tablet;
+$large: $desktop;
+$container: $max-width;
+$xlarge: $ref;
+$xxlarge: $tv;
+
+$breakpoints: (
+  small: $small,
+  medium: $medium,
+  large: $desktop,
+  xlarge: $xlarge,
+  mobile: $mobile,
+  tablet: $tablet,
+  desktop: $desktop,
+  container: $container,
+  max-width: $container,
+  ref: $ref,
+  tv: $tv
+) !default;
+
+
+@mixin breakpoint($size){
+    $value: $size;
+
+    @if( type_of($size) == "string"){
+        $value: map-get($breakpoints, $size);
+    }
+
+    @if( $value > 0 ){
+        @media screen and (min-width: $value){
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin mediaBetween($from, $to){
+    $valueFrom: $from;
+    $valueTo: $to;
+
+    @if( type_of($valueFrom) == "string" and type-of($valueTo) == "string"){
+        $valueFrom: map-get($breakpoints, $from);
+        $valueTo: map-get($breakpoints, $to);
+    }
+
+
+    @media screen and (min-width: $valueFrom) and (max-width: $valueTo) {
+        @content;
+    }
+
+}

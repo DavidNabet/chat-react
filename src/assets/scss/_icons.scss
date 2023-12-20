@@ -6,17 +6,17 @@
 }
 
 .picture {
-    @include mask("/img/image-icon.svg");
+    @include mask("@/assets/img/image-icon.svg");
 }
 
 .emoji {
-    @include mask("/img/emoji-icon.svg");
+    @include mask("@/assets/img/emoji-icon.svg");
 }
 
 .attachment {
-    @include mask("/img/attachment-icon.svg");
+    @include mask("@/assets/img/attachment-icon.svg");
 }
 
 .filter {
-    @include mask("/img/filter-icon.svg");
+    @include mask("@/assets/img/filter-icon.svg");
 }

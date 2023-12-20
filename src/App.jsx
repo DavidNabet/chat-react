@@ -1,13 +1,8 @@
 import Chat from './containers/Chat'
-import './App.css'
 
 function App() {
 
-  return (
-    <>
-      <Chat />
-    </>
-  )
+  return <Chat />
 }
 
 export default App

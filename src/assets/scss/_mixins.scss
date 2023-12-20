@@ -1,4 +1,6 @@
-@import "../../node_modules/@fantassin/utils/rem-calc";
+// @import "/node_modules/@fantassin/utils/rem-calc";
+@import "./rem-calc";
+
 @mixin hn() {
     font-weight: 200;
     font-style: normal;
@@ -20,7 +22,7 @@
 $spacer: 10px !default;
 @function space($i: 1) {
     @if $i < 1 {
-        @return $spacer / $i;
+        @return calc($spacer / $i);
     }
     @return $spacer * $i;
 }
@@ -33,8 +35,13 @@ $spacer: 10px !default;
 
 @mixin h2() {
     @include hn();
-    font-size: rem-calc(32px);
-    line-height: rem-calc(26px);
+    font-family: $fontSemiBold;
+    font-size: rem-calc(40px);
+    line-height: rem-calc(32px);
+    @include mediaBetween($xs, $tablet){
+        font-size: rem-calc(32px); 
+        line-height: rem-calc(32px);
+    }
 }
 
 @mixin h3() {
@@ -58,13 +65,20 @@ $spacer: 10px !default;
     position: absolute;
 }
 
-@mixin avatar($color) {
+@mixin avatar($color, $mr: space(3)) {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background-color: $color;
-    margin-right: space(3);
+    margin-right: $mr;
     transition: color 480ms linear;
+}
+
+@mixin icon($background, $w: 40px, $h: 40px, $backgroundColor: transparent){
+    width: $w;
+    height: $h;
+    background: url("@/assets/img/#{$background}.svg") center no-repeat $backgroundColor;
+    fill: var(--color-border);
 }
 
 @mixin badge() {

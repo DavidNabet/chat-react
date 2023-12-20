@@ -1,4 +1,5 @@
-@import "../../node_modules/@fantassin/utils/media-queries";
+// @import "/node_modules/@fantassin/utils/media-queries";
+@import "./media-queries";
 @import "./sidebar";
 @import "./message-area";
 @import "./message-list";
@@ -8,6 +9,7 @@
 @import "./flex-styles";
 @import "./icons";
 @import "./variables";
+
 :root {
     --color-black: #1A1919;
     --color-border: #979797;
@@ -45,9 +47,9 @@ ul {
 }
 
 html,
-body,
-main {
-    height: 100%;
+body {
+    overflow: clip visible;
+    background-color: var(--color-black);
 }
 
 body {
@@ -72,9 +74,8 @@ p {
     @include font();
 }
 
-p {
+:where(.message-area-inner, .messages) p {
     color: #505172;
-    font-style: italic;
     margin-bottom: 1rem;
 }
 
@@ -82,9 +83,11 @@ main {
     width: 100%;
     display: flex;
     flex-direction: row;
-    background-color: black;
-    @include breakpoint($xlarge) {
+    background: var(--color-black);
+    position: relative;   
+    @include mediaMaxWidth($mobile){
         width: 100%;
+        flex-direction: column;
     }
 }
 
@@ -117,12 +120,30 @@ main {
 // }
 .message-list {
     width: 30%;
+    background-color: #000;
+    @include mediaMaxWidth($tablet){
+        width: 50%;
+    }
+    @include mediaMaxWidth($mobile){
+        width: 100%;
+    }
+}
+
+:where(.messages) svg path {
+    fill: #979797;
 }
 
 .message-area {
     width: 70%;
+    // height: min(100vh, 100%);
     background-color: #fff;
     border-radius: 30px;
     border: 10px solid #000;
-    overflow-y: scroll;
+    overflow: clip visible;
+    @include mediaMaxWidth($tablet){
+        width: 50%;
+    }
+    @include mediaMaxWidth($mobile){
+        width: 100%;
+    }
 }

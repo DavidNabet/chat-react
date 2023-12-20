@@ -1,64 +1,75 @@
-@import "../../node_modules/@fantassin/utils/rem-calc";
+// @import "/node_modules/@fantassin/utils/rem-calc";
+@import "./rem-calc";
 @import "./mixins";
 .left_wrapper {
     position: relative;
     flex: 5;
     display: flex;
     flex-direction: column;
-    margin-left: space(4);
-    margin-right: space(4);
+    gap: space(4);
     margin-top: space(4);
     z-index: 99;
+    @include mediaMaxWidth($xlarge) {
+        width: 100%;
+    }
     form {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
+        gap: 18px;
+
         .search {
             position: relative;
-            margin-right: 15px;
-            i {
+            &-icon {
+                @include icon("search-icon");
                 position: absolute;
-                top: 32%;
-                left: 8%;
-                transform: translate(-32%, -8%);
-                margin: 0 auto;
-                font-size: large;
-                color: var(--color-border);
+                top: 5%;
+                left: 2%;
             }
             input {
                 border-radius: 22px;
                 outline: none;
                 color: var(--color-border);
                 background-color: var(--bg-color-sidebar);
-                height: 44px;
-                line-height: 44px;
+                height: 42px;
+                line-height: 42px;
                 border: none;
-                width: 332px;
+                width: 320px;
                 padding: 1rem 0 1rem 3rem;
+                @include mediaMaxWidth($xlarge) {
+                    width: 100%;
+                }
             }
         }
-        #filterSearch {
-            position: relative;
+        .filter-icon {
             border-radius: 50%;
-            background-color: var(--bg-color-sidebar);
-            width: 44px;
-            height: 44px;
-            line-height: 44px;
-            >.icon {
-                @include center();
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include icon("filter-icon", 42px, 42px, var(--bg-color-sidebar));
+            @include mediaMaxWidth($desktop) {
+                display: none;
             }
         }
+        
     }
     .messages {
-        margin-top: space(4);
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
         .message {
             display: flex;
             flex-direction: row;
             padding: 20px 16px 20px 0;
+            padding-block: space(2);
+            padding-right: 32px;
             background-color: var(--bg-color-sidebar);
             margin-top: rem-calc(12px);
             border-radius: rem-calc(8px);
+            width: 90%;
             .avatar {
                 @include avatar(var(--bg-avatar));
                 margin-left: 1rem;
@@ -68,14 +79,19 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                overflow: hidden;
                 flex: 1;
                 &_actions {
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
                     .more {
-                        color: white;
-                        opacity: 0.4;
+                        position: relative;
+                        &-icon {
+                            position: absolute;
+                            @include icon("more-icon", 20px, 12px);
+                            right: 0;
+                        }
                     }
                 }
                 h5 {
@@ -83,6 +99,9 @@
                 }
                 p {
                     color: white;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
                     line-height: rem-calc(20px);
                     font-weight: 400;
                     margin-bottom: rem-calc(8px);

@@ -5,12 +5,11 @@ function List() {
 <div className="left_wrapper">
     <form method="post">
         <div className="search">
-            <i className="far fa-search"></i>
+            <span className="search-icon"></span>
             <input type="text" placeholder="Search.." name="search" />
         </div>
-        <div id="filterSearch">
-            <i className="icon filter"></i>
-        </div>
+        <span className="filter-icon" id="filterSearch"></span>
+        
     </form>
     <ul className="messages">
         <li className="message">  
@@ -18,11 +17,11 @@ function List() {
             <div className="content">
                 <div className="content_actions">
                     <h5>Emilia Cortez</h5>
-                    <a className="more">
-                        <i className="fas fa-ellipsis-h"></i>
+                    <a href="#" className="more">
+                        <span className="more-icon"></span>
                     </a>    
                 </div>
-                <p>This is the subject of my message...</p>
+                <p>This is the subject of my message</p>
                 <span>Just now</span>
             </div>
         </li>
@@ -31,11 +30,11 @@ function List() {
             <div className="content">
                 <div className="content_actions">
                     <h5>Ashley Smith</h5>
-                    <a className="more">
-                        <i className="fas fa-ellipsis-h"></i>
+                    <a href="#" className="more">
+                        <span className="more-icon"></span>
                     </a>    
                 </div>
-                <p>This is the subject of my message...</p>
+                <p>This is the subject of my message</p>
                 <span>3 hours ago</span>
             </div>
         </li>
@@ -44,11 +43,11 @@ function List() {
             <div className="content">
                 <div className="content_actions">
                     <h5>Brian Hallen</h5>
-                    <a className="more">
-                        <i className="fas fa-ellipsis-h"></i>
+                    <a href="#" className="more">
+                        <span className="more-icon"></span>
                     </a>    
                 </div>
-                <p>This is the subject of my message...</p>
+                <p>This is the subject of my message</p>
                 <span>Yesterday, 9:30</span>
             </div>
         </li>
@@ -57,16 +56,15 @@ function List() {
             <div className="content">
                 <div className="content_actions">
                     <h5>Jessica Lee</h5>
-                    <a className="more">
-                        <i className="fas fa-ellipsis-h"></i>
+                    <a href="#" className="more">
+                        <span className="more-icon"></span>
                     </a>    
                 </div>
-                <p>Hey David, Attached are some product...</p>
+                <p>Hey David, Attached are some product</p>
                 <span>Yesterday, 9:30</span>
             </div>
         </li>
     </ul>
-    
 </div>
   )
 }
